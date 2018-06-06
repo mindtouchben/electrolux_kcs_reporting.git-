@@ -41,6 +41,7 @@ view: current_state {
     sql: ${TABLE}.Created ;;
   }
 
+
   dimension_group: date {
     type: time
     timeframes: [
@@ -130,7 +131,7 @@ view: current_state {
 
   measure: total_rating  {
     type: sum
-    sql: ${rating} ;;
+    sql: Events.${rating} ;;
   }
 
   measure: count {
