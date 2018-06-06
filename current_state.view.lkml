@@ -3,7 +3,13 @@ view: current_state {
     sql:
       SELECT * FROM Events t1
         join(SELECT PageID, max(Date) as Date
-        FROM Events GROUP BY PageID) t2 USING (PageID, Date) ;;
+        FROM Events
+        WHERE date = '{% parameter articles_by_date %}'
+        GROUP BY PageID) t2 USING (PageID, Date) ;;
+  }
+
+  filter: articles_by_date {
+    type: date
   }
 
   dimension: author {
