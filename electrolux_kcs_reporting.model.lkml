@@ -18,3 +18,5 @@ explore: events {}
 explore: kcs {}
 
 explore: state {}
+
+explore: current_state {}
