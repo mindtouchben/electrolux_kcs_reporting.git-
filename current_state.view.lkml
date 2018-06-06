@@ -129,11 +129,6 @@ view: current_state {
     sql: ${TABLE}.Visibility ;;
   }
 
-  measure: total_rating  {
-    type: sum
-    sql: Events.${rating} ;;
-  }
-
   measure: count {
     type: count
     drill_fields: []
