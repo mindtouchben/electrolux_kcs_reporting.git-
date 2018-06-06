@@ -4,7 +4,7 @@ view: current_state {
       SELECT * FROM Events t1
         join(SELECT PageID, max(Date) as Date
         FROM Events
-        WHERE date = '{% parameter articles_by_date %}'
+        WHERE {% condition articles_by_date %} date {% endcondition %}
         GROUP BY PageID) t2 USING (PageID, Date) ;;
   }
 
