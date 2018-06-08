@@ -126,4 +126,9 @@ view: events {
     type: count
     drill_fields: []
   }
+
+  measure: distinct_urls {
+    type:  count_distinct
+    sql: ${url} ;;
+  }
 }
